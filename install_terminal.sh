@@ -1,6 +1,11 @@
 # Fail on any command.
-set -eux pipefail
+set -euxo pipefail
 
-# Install ZSH
-sudo apt install -y git-core zsh curl
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Update packages
+sudo apt update
+
+# Install required packages
+sudo apt install -y git curl zsh
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
